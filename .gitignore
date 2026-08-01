@@ -1,0 +1,11 @@
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+*.swp
+*.tmp
+__pycache__/
+*.pyc
+
+# Completed worksheets may contain private infrastructure details
+completed/
+my-recovery-map.md
