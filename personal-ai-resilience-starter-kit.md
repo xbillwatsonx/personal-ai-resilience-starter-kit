@@ -6,12 +6,18 @@ Use this worksheet to map a personal AI setup, find its shared weak points, and 
 
 ### Level 1: Stay reachable
 
+"Reachable" means being able to contact your agent and receive its reply through an alternate route when the primary route fails. If your main chat goes down, you can still reach your agent another way.
+
 - [ ] A second communication route is connected.
 - [ ] I sent a test message through both routes.
 - [ ] I received a reply through both routes.
 - [ ] I know whether both routes depend on the same gateway and computer.
 
+If you are new, complete Level 1 before attempting Levels 2 and 3. Do not try to do everything at once.
+
 ### Level 2: Stay recoverable
+
+"Recoverable" means you can restore your agent's memory, instructions, configuration, and project files if something breaks or data is lost. If your computer crashes, you have not lost everything.
 
 - [ ] Memory is backed up.
 - [ ] Agent instructions are backed up.
@@ -21,7 +27,11 @@ Use this worksheet to map a personal AI setup, find its shared weak points, and 
 - [ ] At least one backup is stored away from the main computer.
 - [ ] I restored a harmless test file successfully.
 
+If a fully independent backup is not affordable right now, start with what you have. A backup on the same computer is still better than no backup. Add an off-computer or cloud backup when you can. The goal is progressive independence: make backups a little more independent over time, not all at once.
+
 ### Level 3: Stay diagnosable
+
+"Diagnosable" means being able to find evidence and understand a failure safely before changing the system. When something breaks, you or a trusted helper can figure out what happened without making things worse.
 
 - [ ] The recovery map below is current.
 - [ ] A second agent or trusted person can read the necessary recovery documents.
@@ -31,6 +41,12 @@ Use this worksheet to map a personal AI setup, find its shared weak points, and 
 - [ ] The result is reviewed after a change.
 
 ## 2. AI recovery map
+
+Designated recovery operator (who runs recovery if you are unavailable):
+
+Where this recovery map is stored:
+
+Where the ordered recovery runbook lives (if separate from this map):
 
 Main agent:
 
@@ -73,14 +89,19 @@ Changes that require human approval:
 If the main messaging channel fails:
 
 If the gateway fails:
+Record: approved restart command or runbook location, alternate access route, escalation owner, and verification steps.
 
 If the host computer fails:
+Record: replacement-host prerequisites, rebuild order (framework, config, instructions, memory, project files), how credentials will be reconnected without putting secrets in the map, and end-to-end recovery verification steps.
 
 If the model provider fails:
 
 If the main account or credentials become unavailable:
+Record: where credentials are managed (password manager, vault, or recovery codes), authorized recovery contact, account owner, and provider recovery/escalation instructions. Do not put actual credentials in this map.
 
 ## 3. Shared failure-domain worksheet
+
+A "failure domain" is a set of things that fail together because they share the same computer, account, gateway, internet connection, or storage. If one failure can take down two apparently independent systems, they are in the same failure domain.
 
 For each pair, write down what both systems still share.
 
@@ -93,7 +114,25 @@ For each pair, write down what both systems still share.
 
 Quick test: if both "backups" disappear when you shut down one computer, disable one account, stop one gateway, or disconnect one drive, they aren't independent backups. They may still help with smaller failures, but their limits should be written down.
 
+### What to do after finding shared failure domains
+
+Once you identify a shared weakness, separate one dependency at a time:
+
+- **Same gateway**: add a second route that does not go through the same gateway (e.g., Telegram plus Discord instead of two Telegram bots).
+- **Same computer**: move one backup to cloud storage, an external drive, or another machine.
+- **Same account**: use a different account or service for the backup path.
+- **Same internet connection**: store a backup somewhere reachable without your home network.
+- **Same storage**: copy critical files to a different disk or cloud provider.
+
+You do not need to fix everything at once. Each separation reduces risk. Start with the weakest shared dependency and work outward.
+
 ## 4. Ten-minute resilience check
+
+How to verify items you may be unsure about:
+
+- "Do both channels depend on the same gateway?" — ask your agent what gateway each channel uses, or check if both channels stop working when you restart the gateway service.
+- "Are files backed up?" — check if a backup file exists and is recent: `ls -lh <backup location>`.
+- "Can another agent or person read the recovery map?" — ask a second agent or trusted person to find and read the recovery map file without changing anything.
 
 - [ ] Can I reach my main agent through a second channel?
 - [ ] Have I received a reply through both channels recently?
@@ -107,6 +146,17 @@ Quick test: if both "backups" disappear when you shut down one computer, disable
 Every unchecked item is a specific place to improve. It doesn't mean the whole setup has failed.
 
 ## 5. Monthly failure drill
+
+Run this drill once per month. Monthly testing is worth the effort because backups, second channels, and recovery instructions can look fine until a real outage exposes that they do not actually work. A monthly drill catches gaps before a real failure does.
+
+### If something fails during the drill
+
+1. Stop. Do not proceed with further risky changes.
+2. Restore the disabled route or service immediately.
+3. Do not attempt to fix unrelated issues during the drill.
+4. Document what failed and what evidence you saw.
+5. Fix the gap after the drill is over, in a calm environment.
+6. Rerun only the step that failed after the fix is verified.
 
 Date:
 
