@@ -130,9 +130,9 @@ You do not need to fix everything at once. Each separation reduces risk. Start w
 
 How to verify items you may be unsure about:
 
-- "Do both channels depend on the same gateway?" — ask your agent what gateway each channel uses, or check if both channels stop working when you restart the gateway service.
-- "Are files backed up?" — check if a backup file exists and is recent: `ls -lh <backup location>`.
-- "Can another agent or person read the recovery map?" — ask a second agent or trusted person to find and read the recovery map file without changing anything.
+- "Do both channels depend on the same gateway?", ask your agent what gateway each channel uses, or check if both channels stop working when you restart the gateway service.
+- "Are files backed up?", check if a backup file exists and is recent: `ls -lh <backup location>`.
+- "Can another agent or person read the recovery map?", ask a second agent or trusted person to find and read the recovery map file without changing anything.
 
 - [ ] Can I reach my main agent through a second channel?
 - [ ] Have I received a reply through both channels recently?
